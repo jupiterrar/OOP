@@ -1,7 +1,7 @@
 **Задание 1. Разбор ТЗ**
 
 | Сущность | Инварианты | Операции |
-| :--- | :---: | ---: |
+| :---: | --- | :---: |
 | Task | Immutable<br>id (str, UUID4) != null<br>1 <= title (str) <= 200<br>status ∈ {"todo", "in_progress", "done"}<br>created_at (datetime, UTC, timezone-aware) != null<br>tags ∈ tags_list<br>1 <= priority (int) <= 5 | create, read |
 | TaskFilter | по статусу, по тегу, по минимальному приоритету; фильтры комбинируются по «И» | create |
 | Storage | контракт через typing.Protocol, уникальные айди задач | save(task), get(task_id), delete(task_id), list_all(filter=None) |
